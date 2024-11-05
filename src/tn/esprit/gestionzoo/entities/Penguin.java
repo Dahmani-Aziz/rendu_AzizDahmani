@@ -12,17 +12,17 @@ public class Penguin extends Aquatic {
         this.swimmingDepth = swimmingDepth;
     }
 
-    @Override
-    public void swim(){
-        System.out.println("This penguin is swimming.");
-    };
-
     public float getSwimmingDepth() {
         return swimmingDepth;
     }
 
     public void setSwimmingDepth(float swimmingDepth) {
         this.swimmingDepth = swimmingDepth;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("A penguin is swimming");
     }
 
     @Override

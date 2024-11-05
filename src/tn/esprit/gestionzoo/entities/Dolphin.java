@@ -20,10 +20,10 @@ public class Dolphin extends Aquatic {
         this.swimmingSpeed = swimmingSpeed;
     }
 
-    @Override
+    /*@Override
     public void swim() {
         System.out.println("This dolphin is swimming.");
-    }
+    }*/
 
     @Override
     public String toString() {

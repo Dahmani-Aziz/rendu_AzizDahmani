@@ -1,5 +1,6 @@
 package tn.esprit.gestionzoo.main;
 
+import tn.esprit.gestionzoo.Food;
 import tn.esprit.gestionzoo.entities.*;
 import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
 import tn.esprit.gestionzoo.exceptions.ZooFullException;
@@ -89,14 +90,30 @@ public class ZooManagement {
         myZoo.addAquaticAnimal(p3);
         myZoo.addAquaticAnimal(new Penguin());
 
-        for (int i = 0; i < myZoo.getNbrAquatics(); i++) {
+       /* for (int i = 0; i < myZoo.getNbrAquatics(); i++) {
             Aquatic[] aquatics = myZoo.getAquaticAnimals();
             aquatics[i].swim();
-        }
+        }*/ //commented because of the abstract swim
 
         myZoo.displayNumberOfAquaticsByType();
 
         System.out.println(myZoo.maxPenguinSwimmingDepth());
+
+        Aquatic shark = new Aquatic();
+        System.out.println("Testing Aquatic (Carnivore):");
+        shark.eatMeat(Food.MEAT);
+        shark.eatMeat(Food.PLANT);
+
+        Terrestrial bear = new Terrestrial();
+        System.out.println("\nTesting Terrestrial (Omnivore):");
+        bear.eatMeat(Food.MEAT);
+        bear.eatPlant(Food.PLANT);
+        bear.eatPlantAndMeat(Food.BOTH);
+
+        Penguin penguin = new Penguin();
+        System.out.println("\nTesting Penguin (Carnivore):");
+        penguin.eatMeat(Food.MEAT);
+        penguin.eatMeat(Food.PLANT);
 
     }
 

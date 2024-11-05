@@ -1,6 +1,10 @@
 package tn.esprit.gestionzoo.entities;
 
-public abstract non-sealed class Aquatic extends Animal {
+import tn.esprit.gestionzoo.Carnivore;
+import tn.esprit.gestionzoo.Food;
+
+
+public  non-sealed class Aquatic extends Animal implements Carnivore<Food> {
 
     protected String habitat;
 
@@ -13,7 +17,7 @@ public abstract non-sealed class Aquatic extends Animal {
     }
 
 
-    public abstract void swim();
+   // public abstract void swim();
 
     @Override
     public String toString() {
@@ -28,5 +32,14 @@ public abstract non-sealed class Aquatic extends Animal {
             return aquatic.habitat.equals(habitat) && aquatic.getName().equals(super.getName()) && aquatic.getAge() == super.getAge();
         }
         return false;
+    }
+
+    @Override
+    public void eatMeat(Food meat) {
+        if (meat == Food.MEAT || meat == Food.BOTH) {
+            System.out.println("Terrestrial animal is eating meat.");
+        } else {
+            System.out.println("Terrestrial animals can only eat meat or both.");
+        }
     }
 }
